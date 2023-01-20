@@ -1,4 +1,5 @@
-variable "Name" {
+variable "name" {
+    default = "Chance"
     description = "Name the instance on deploy"
 }
 
