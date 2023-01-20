@@ -1,5 +1,4 @@
 variable "name" {
-    default = "Admin"
     description = "Name the instance on deploy"
 }
 
