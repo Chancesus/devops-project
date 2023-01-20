@@ -1,5 +1,5 @@
 variable "name" {
-    default = "Chance"
+    default = "Admin"
     description = "Name the instance on deploy"
 }
 
