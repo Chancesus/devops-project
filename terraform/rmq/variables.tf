@@ -1,11 +1,14 @@
 variable "name" {
-    description = "Name the instance on deploy"
+  description = "Name the instance on deploy"
+
 }
 
 variable "group" {
-    description = "the group tag for ansible to identify"
+  description = "the group tag for ansible to identify"
+
 }
 
 variable "profile" {
-    description = "profile we will use for deploy"
+  description = "profile we will use for deploy"
+
 }
