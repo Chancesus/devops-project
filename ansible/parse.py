@@ -5,7 +5,7 @@ def __init__(self):
     super(BaseInventoryPlugin, self).__init__()
 
 class InventoryModule(BaseInventoryPlugin):
-    
+    ##Check Docs
     NAME = 'aws_ec2.yaml'
 
 def parse(self, inventory, loader, path):
