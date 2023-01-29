@@ -27,7 +27,7 @@
   
 3. Also in EC2, head to Security groups and create one. For this we need some inbound rules. Create two custom inbound rules for 15672. One is going to be "Anywhere IVP4" and the other will be "Anywhere IVP6". This port is specific to RabbitMQ, so if you want to use something else the port numbers will be different. Also be sure to add an SSH rule and select your IP as the source. Make sure to keep note of the SG-ID, we will need it while setting up terraform.
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-16-15-33-image.png?msec=1675021490753)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot1.png)
   
 
 ### GitHub
