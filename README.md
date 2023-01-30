@@ -172,13 +172,13 @@ The way terraform processes files is all as one. So you could include this in th
   ```php
   if [ $Action = "apply" ]; then
       terraform -chdir=terraform/rmq init
-      terraform -chdir=terraform/rmq $Action -var 'name=RMQEC2' -var 'profile=DevopsAdmin' -var 'group=$Group' -auto-approve 
+      terraform -chdir=terraform/rmq $Action -var 'name=RMQEC2' -var 'profile=YOUR_AWS_PROFILE' -var 'group=$Group' -auto-approve 
   elif [ $Action = "plan" ]; then
       terraform -chdir=terraform/rmq init
-      terraform -chdir=terraform/rmq $Action -var 'name=RMQEC2' -var 'profile=DevopsAdmin' -var 'group=rmq' 
+      terraform -chdir=terraform/rmq $Action -var 'name=RMQEC2' -var 'profile=YOUR_AWS_PROFILE' -var 'group=rmq' 
   else
       terraform -chdir=terraform/rmq init
-      terraform -chdir=terraform/rmq $Action -var 'name=RMQEC2' -var 'profile=DevopsAdmin' -var 'group=rmq' -auto-approve 
+      terraform -chdir=terraform/rmq $Action -var 'name=RMQEC2' -var 'profile=YOUR_AWS_PROFILE' -var 'group=rmq' -auto-approve 
   fi
   ```
   
