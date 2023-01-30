@@ -19,15 +19,15 @@
 
 1. Head to IAM, Users, then "Add User". After this give the user a name, attach the policy "AmazonEC2FullAccess", and create. Once the user is created, click on it in the list of users. Click on the "Security Credentials" tab. Then scroll down to Access Keys section and generate them. This is the new way to give users Programmatic access.
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-15-59-28-image.png?msec=1675021490742)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot1.png)
   
 2. Next, head to EC2 in the management console and Key Pairs. Create a Key pair. The defaults are okay so just give this a name you will remember and create.
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-16-06-34-image.png?msec=1675021490742)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot2.png)
   
 3. Also in EC2, head to Security groups and create one. For this we need some inbound rules. Create two custom inbound rules for 15672. One is going to be "Anywhere IVP4" and the other will be "Anywhere IVP6". This port is specific to RabbitMQ, so if you want to use something else the port numbers will be different. Also be sure to add an SSH rule and select your IP as the source. Make sure to keep note of the SG-ID, we will need it while setting up terraform.
   
-  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot1.png)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot3.png)
   
 
 ### GitHub
@@ -40,7 +40,7 @@
   ssh-keygen
   ```
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-16-29-54-image.png?msec=1675021490742)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot4.png)
   
   You can give this a name if you like. Copy the public version of the key. If you can't find it you can run this command.
   
@@ -50,7 +50,7 @@
   
 3. Head here in your GitHub settings and create a New SSH Key. Paste in the public key you just copied.
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-16-34-06-image.png?msec=1675021490742)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot5.png)
   
 
 ### Jenkins Setup
@@ -71,7 +71,7 @@
   
   Paste this in and create.
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-16-47-47-image.png?msec=1675021490743)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot6.png)
   
 4. Add antoher credential in the same spot but this one will be of kind "AWS Credentials" instead. Enter your user's name, Access Key and Secret Key from the AWS user we created earlier.
   
@@ -153,15 +153,15 @@ The way terraform processes files is all as one. So you could include this in th
 
 1. Create a new freestyle job called "Terraform_Build". Then select "This project is parameterized". We are going to create 4 different sections here. First choose (Choice)
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-19-01-38-image.png?msec=1675021490743)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot7.png)
   
   Next, create a Boolean parameter named Ansible.
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-19-02-50-image.png?msec=1675021490743)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot8.png)
   
   Finally, create two string parameters. One named "Name" and the other "Group". Since I am using Rabbitmq as my example I give the values "rabbitmq" and "rmq" respectively.
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-27-19-06-07-image.png?msec=1675021490743)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot9.png)
   
 2. Select Git for Source Control Management. Paste the URL to your Repo here. Use the Jenkins credentials we created earlier here.
   
@@ -265,7 +265,7 @@ The way terraform processes files is all as one. So you could include this in th
   
 2. We also need to add a Build Trigger and check "Trigger Builds remotely" and name it.
   
-  ![](file:///home/chance/snap/marktext/9/.config/marktext/images/2023-01-29-12-27-52-image.png?msec=1675024072449)
+  ![](https://github.com/Chancesus/devops-project/blob/main/GuideScreenshots/Screenshot10.png)
   
 3. Finally, we have to add the Ansible trigger into our first Jenkins Job. Make sure to add in your username and the Token
   
